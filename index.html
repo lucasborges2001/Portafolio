@@ -58,7 +58,7 @@
             <h2>Proyectos</h2>
             <ul>
                 <li>
-                    <a href="https://66b14118a65ae6143a5b0a34--aesthetic-starburst-999551.netlify.app/">Omega Servicio Automotriz</a>
+                    <a href="https://tallerborcar.com/">Taller Borcar</a>
                 </li>
             </ul>
         </section>
@@ -83,6 +83,39 @@
     </main>
 </div>
 
-<script src="script.js"></script>
+<script>
+    function toggleSection(sectionId) {
+        const sections = document.querySelectorAll('.content-section');
+        const navLinks = document.querySelectorAll('nav a');
+        const selectedSection = document.getElementById(sectionId);
+
+        sections.forEach(section => { // Oculto
+            if (section !== selectedSection) {
+                section.style.display = 'none';
+                section.classList.remove('active');
+            }
+        });
+
+        navLinks.forEach(link => { // Quito activo
+            link.classList.remove('active-link');
+        });
+
+        if (selectedSection.classList.contains('active')) {
+            selectedSection.classList.remove('active');
+            selectedSection.style.display = 'none';
+        } else {
+            selectedSection.style.display = 'block';
+            setTimeout(() => selectedSection.classList.add('active'), 10);
+            
+            const activeLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active-link');
+            }
+        }
+
+        const container = document.querySelector('.container');
+        container.style.height = 'auto';
+    }
+</script>
 </body>
 </html>

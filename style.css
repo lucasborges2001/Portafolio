@@ -1,69 +1,173 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #0d0d0d; /* Color de fondo oscuro */
-    color: #fff; /* Color de texto blanco */
+    background-color: #0d0d0d;
+    color: #fff;
     line-height: 1.6;
     margin: 0;
-    font-size: 16px;
+    font-size: 1rem;
+    scroll-behavior: smooth;
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #1e1e1e; /* Color de fondo para el contenedor principal */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra suave alrededor del contenedor */
+    padding: 1.25rem;
+    background-color: #1e1e1e;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    transition: height 0.3s ease;
 }
 
 header {
     text-align: center;
-    margin-bottom: 40px; /* Mayor espacio entre el encabezado y la barra de navegación */
+    margin-bottom: 2rem;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    background-color: #333; /* Fondo oscuro para la barra de navegación */
-    border-radius: 5px; /* Bordes redondeados para la barra de navegación */
+header h1 {
+    font-size: 2.5rem;
+    color: #e0e0e0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+header h1::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #f39c12;
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+nav {
+    background-color: #333;
+    border-radius: 5px;
     overflow: hidden;
 }
 
-nav li {
-    display: inline;
-    margin-right: 20px;
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
-
 
 nav a {
     text-decoration: none;
-    color: #fff; /* Color de texto blanco para los enlaces */
+    color: #fff;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, font-weight 0.3s ease;
     display: block;
-    padding: 10px 20px; /* Mayor área de clic para los enlaces */
 }
 
 nav a:hover {
-    background-color: #555; /* Color de fondo cuando se pasa el ratón sobre los enlaces */
+    background-color: #333;
+}
+
+nav a.active-link {
+    color: #f39c12;
+    font-weight: bold;
 }
 
 main .content-section {
     display: none;
-    margin-top: 20px; /* Separación entre las secciones */
-}
-
-/* Estilos específicos para las secciones */
-#about, #skills, #projects, #contact {
-    background-color: #2c2c2c; /* Fondo oscuro para las secciones "Sobre Mí", "Habilidades", "Proyectos" y "Contacto" */
+    margin-top: 20px;
+    background-color: #2c2c2c;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
+main .content-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
 
-#contact a, #projects a {
+main .content-section h2 {
+    font-size: 1.8rem;
+    color: #f39c12;
+    border-bottom: 2px solid #f39c12;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#projects a, #contact a {
     text-decoration: none;
-    color: var(--blanco);
+    color: #f39c12;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-#mail{
-    display: flex;
-    align-items: center;
+#projects a:hover, #contact a:hover {
+    color: #e67e22;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%;
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav li {
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    nav a {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
+    main .content-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        border-radius: 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    main .content-section {
+        padding: 15px;
+    }
 }
