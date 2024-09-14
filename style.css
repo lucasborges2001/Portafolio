@@ -6,6 +6,7 @@ body {
     margin: 0;
     font-size: 1rem;
     scroll-behavior: smooth;
+    transition: background-color 0.3s;
 }
 
 .container {
@@ -15,7 +16,7 @@ body {
     background-color: #1e1e1e;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     border-radius: 8px;
-    transition: height 0.3s ease;
+    transition: height 0.3s ease, background-color 0.3s;
 }
 
 header {
@@ -71,6 +72,24 @@ nav a:hover {
 nav a.active-link {
     color: #f39c12;
     font-weight: bold;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links li a {
+    color: #f39c12;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links li a:hover {
+    color: #e67e22;
 }
 
 main .content-section {

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Lucas Borges</title>
 </head>
 <body>
@@ -36,19 +37,19 @@
                 <li>
                     <strong>Lenguajes de Programación:</strong>
                     <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>C++</li>
-                        <li>Assembler (8086)</li>
+                        <li><i class="fas fa-code"></i> HTML</li>
+                        <li><i class="fas fa-code"></i> CSS</li>
+                        <li><i class="fas fa-code"></i> JavaScript</li>
+                        <li><i class="fas fa-code"></i> C++</li>
+                        <li><i class="fas fa-microchip"></i> Assembler (8086)</li>
                     </ul>
                 </li>
                 <li>
                     <strong>Idiomas:</strong>
                     <ul>
-                        <li>Español (Nativo)</li>
-                        <li>Inglés (B2)</li>
-                        <li>Portugues (A2)</li>
+                        <li><i class="fas fa-globe"></i> Español (Nativo)</li>
+                        <li><i class="fas fa-globe"></i> Inglés (B2)</li>
+                        <li><i class="fas fa-globe"></i> Portugués (A2)</li>
                     </ul>
                 </li>
             </ul>
@@ -57,30 +58,27 @@
         <section id="projects" class="content-section">
             <h2>Proyectos</h2>
             <ul>
-                <li>
-                    <a href="https://tallerborcar.com/">Taller Borcar</a>
-                </li>
+                <li><a href="https://tallerborcar.com/">Taller Borcar</a></li>
+                <li><a href="https://omegaservicioautomotriz.com/">Taller Omega</a></li>
             </ul>
         </section>
 
         <section id="contact" class="content-section">
             <h2>Contacto</h2>
             <ul>
-                <li>
-                    Correo Electrónico: 
-                    <a href="mailto:lucasbggv2001@gmail.com">
-                        lucasbggv2001@gmail.com
-                    </a>
-                </li>
-                <!-- <li>
-                    Número de Teléfono: 
-                    <a href="https://wa.me/+59893964362">
-                        +598 93 964 362
-                    </a>
-                </li> -->
+                <li><i class="fas fa-envelope"></i> Correo Electrónico: <a href="mailto:lucasbggv2001@gmail.com">lucasbggv2001@gmail.com</a></li>
             </ul>
         </section>
     </main>
+
+    <footer>
+        <p>Conéctate conmigo en redes sociales:</p>
+        <ul class="social-links">
+            <li><a href="https://www.linkedin.com/in/lucasborges0109/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/lucasborges2001" target="_blank"><i class="fab fa-github"></i></a></li>
+        </ul>
+        <p>&copy; 2024 Lucas Borges</p>
+    </footer>
 </div>
 
 <script>
@@ -89,14 +87,14 @@
         const navLinks = document.querySelectorAll('nav a');
         const selectedSection = document.getElementById(sectionId);
 
-        sections.forEach(section => { // Oculto
+        sections.forEach(section => { 
             if (section !== selectedSection) {
                 section.style.display = 'none';
                 section.classList.remove('active');
             }
         });
 
-        navLinks.forEach(link => { // Quito activo
+        navLinks.forEach(link => { 
             link.classList.remove('active-link');
         });
 
@@ -117,5 +115,6 @@
         container.style.height = 'auto';
     }
 </script>
+
 </body>
 </html>
