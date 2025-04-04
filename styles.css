@@ -36,32 +36,13 @@ h1, h2, h3 {
     background-color: #0056b3;
 }
 
-.fade-in {
-    opacity: 0;
-    transition: opacity 0.8s ease-in;
-}
-
-.fade-in.visible {
-    opacity: 1;
-}
-
-.project-card {
+.card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:hover {
+.card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.pulse {
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
 }
 
 footer a {
